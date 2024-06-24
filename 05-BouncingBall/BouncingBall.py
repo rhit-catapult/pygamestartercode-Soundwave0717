@@ -5,7 +5,9 @@ import random
 
 # You will implement this module ENTIRELY ON YOUR OWN!
 
-# TODO: Create a Ball class.
+class Ball:
+    def __init__(self, screen):
+
 # TODO: Possible member variables: screen, color, x, y, radius, speed_x, speed_y
 # TODO: Methods: __init__, draw, move
 
@@ -17,7 +19,9 @@ def main():
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
 
-    # TODO: Create an instance of the Ball class called ball1
+
+    ball1 = Ball(screen)
+
 
     while True:
         for event in pygame.event.get():
@@ -28,8 +32,8 @@ def main():
         screen.fill(pygame.Color('gray'))
 
         # TODO: Move the ball
-        # TODO: Draw the ball
-
+        ball1.move()
+        ball1.draw()
         pygame.display.update()
 
 

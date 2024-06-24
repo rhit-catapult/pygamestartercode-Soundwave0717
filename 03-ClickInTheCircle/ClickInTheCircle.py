@@ -11,7 +11,7 @@ def distance(point1, point2):
     # TODO 4: Return the actual distance between point 1 and point 2.
     #  Hint: you will need the math library for the sqrt function.
     #       distance = sqrt(   (delta x) ** 2 + (delta y) ** 2  )
-    return 0
+    return math.sqrt((point1_x - point2_x) ** 2 + (point1_y - point2_y) ** 2)
 
 
 def main():
@@ -38,7 +38,10 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                #print(f"You clicked at {pygame.mouse.get_pos()}")
+                click_position = distance(pygame.mouse.get_pos(), circle_center)
+                print(distance_from_circle)
             # TODO 2: For a MOUSEBUTTONDOWN event get the click position.
                 # TODO 3: Determine the distance between the click position and the circle_center using the distance
                 # TODO 3:   function and save the result into a variable called distance_from_circle
@@ -50,7 +53,7 @@ def main():
         screen.fill(pygame.Color("Black"))
 
         # TODO 1: Draw the circle using the screen, circle_color, circle_center, circle_radius, and circle_border_width
-
+        pygame.draw.circle(screen, circle_color, circle_center, circle_radius, circle_border_width)
         # TODO 6: Create a text image (render the text) based on the message_text with the color (122, 237, 201)
 
         screen.blit(instructions_image, (25, 25))

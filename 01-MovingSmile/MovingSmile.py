@@ -13,7 +13,7 @@ def main():
             if event.type == pygame.QUIT:
                 sys.exit()
             # TODO 3: Make the eye pupils move with Up, Down, Left, and Right keys
-
+            if event.type == pygame.KEYUP:
         screen.fill((255, 255, 255))  # white
 
         # API --> pygame.draw.circle(screen, color, (x, y), radius, thickness)
@@ -35,7 +35,7 @@ def main():
 
         # TODO 2: Draw a mouth
         # Suggestion: color (0,0,0), x 230, y 320, width 180, height 30
-        # API --> pygame.draw.rect(screen, (r,g,b), (x, y, width, height), thickness)
+        pygame.draw.rect(screen, (0,0,0), (230, 300, 180, 30), 5)
 
         pygame.display.update()
 
